@@ -119,5 +119,81 @@ console.log(stringNumber); // "33"
 console.log(typeof stringNumber); // string
 */
 
+// **********************Operations ********************************
+/*
+let value = 3;
+let negValue = -value
+console.log(negValue); // -3
+*/
 
-// ***************************Opera
+
+/*
+console.log(2 + 2);
+console.log(2 - 2);
+console.log(2 * 2);
+console.log(2 / 2);
+console.log(2 ** 2);
+console.log(2 % 3);
+*/
+
+/*
+let str1 = "hello";
+let str2 = " hitesh";
+let str3 = str1 + str2;
+console.log(str3); // hello hitesh
+*/
+
+/*
+console.log("1" + 2);
+console.log(1 + "2");
+console.log("1" + "2");
+console.log("1" + 2 + 2);
+console.log(1 + 2 + "2");
+// give conclusion by analysing these above code
+*/
+
+
+/*
+console.log(3 + 4 * 5 % 3);
+// use paranthesis to change the order of operations
+// always use paranthesis to make the code more readable
+console.log(3 + (4 * 5) % 3);
+*/
+
+
+// tricky conversion
+/*
+console.log(true);
+console.log(+true);
+console.log(-true);
+console.log(+ "");
+*/
+
+
+
+/*
+let num1, num2, num3;
+
+num1 = num2 = num3 = 2 + 2;
+*/
+
+
+
+/*
+let gameCounter = 100;
+gameCounter++; // or ++gameCounter
+console.log(gameCounter); // 101
+*/
+
+// prefic and postfix operator
+// explain it
+
+// Link to study: 
+https://262.ecma-international.org/#sec-type-conversion
+
+
+
+
+
+
+
