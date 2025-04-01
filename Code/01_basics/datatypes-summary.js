@@ -12,7 +12,7 @@ let userEmail;
 // use of symbol
 const id = Symbol('123');
 const idanotherId = Symbol('123');
-console.log(id === idanotherId); // false
+// console.log(id === idanotherId); // false
 
 
 const bigNumber = 688689263856398563985698596698695745745186n;
@@ -36,3 +36,26 @@ const myFunction = function () {
     console.log("hello world");
 }
 
+// *****************************************
+
+
+// Stack(Primitive), Heap(Non-primitive)
+
+// Example of copying value
+let myYoutubeName = "hiteshchaudhary";
+let anotherName = "myYoutubeName"; // copying value
+anotherName = "chaiaurcode";
+console.log(anotherName);
+console.log(myYoutubeName);
+
+
+// Example of same reference
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl",
+}
+
+let userTwo = userOne; // copying reference
+userTwo.email = "hitesh@google.com";
+console.log(userOne.email);
+console.log(userTwo.email);
