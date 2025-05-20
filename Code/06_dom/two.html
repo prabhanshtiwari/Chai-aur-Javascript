@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    
+</body>
+<script>
+    const parent = document.querySelector(".parent");
+  
+    console.log(parent); // it gives entire .parent element
+    
+    /*
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day" style="color: orange;">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    */
+
+
+    console.log(parent.children); // it gives the HTMLCollection of childrens
+    /*
+    HTMLCollection(4) [div.day, div.day, div.day, div.day]
+    */
+
+
+
+    console.log(parent.children[1]); // accessing index 1 element of parent element
+
+    /*
+    <div class="day" style="color: orange;">Tuesday</div>
+    */
+
+
+    console.log(parent.children[1].innerHTML); // return the html content
+    /*
+    Tuesday
+    */
+
+    
+    // printing the content of all the children
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+    }
+    /*
+    Monday
+    Tuesday
+    Wednesday
+    Thursday
+    */
+
+
+    // let's do some styling
+    parent.children[1].style.color = "orange";
+    /*
+    Now, the color of text of second children turn to orange
+    */
+
+
+    // intresting properties
+    console.log(parent.firstElementChild); // it returns the first element child
+    /*
+    <div class="day">Monday</div>
+    */
+
+
+
+    console.log(parent.lastElementChild); // it returns the last element child
+    /*
+    <div class="day">Thursday</div>
+    */
+
+
+    // As we are moving from parent to child, we can also move from child to parent
+
+    const dayOne = document.querySelector(".day");
+    console.log(dayOne); // it selects the first element having day as className
+
+    /*
+    <div class="day">Monday</div>
+    */
+
+
+    console.log(dayOne.parentElement);
+        /*
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day" style="color: orange;">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    */
+
+
+    console.log(dayOne.nextElementSibling); // it returns the next sibling element
+
+    /*
+    <div class="day" style="color: orange;">Tuesday</div>
+    */
+
+
+
+
+    // few more things which may surprise you
+
+    console.log("NODES: ", parent.childNodes); // it returns the child nodes of the .parent element
+
+    /*
+    NODES:  
+     NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+
+
+    - How it has 9 elements in the NodeList? Explain.
+    Ans: 
+
+    */
+
+
+    
+    
+
+
+
+
+
+
+
+    
+</script>
+</html>
