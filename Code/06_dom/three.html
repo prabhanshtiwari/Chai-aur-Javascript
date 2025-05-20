@@ -5,11 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chai aur code</title>
 </head>
-<body>
+<body style="background-color: #212121; color: #fff;">
 
-    // How to create NodeList programmatically?
+    <!-- // How to create NodeList programmatically? -->
 
-    
-    
 </body>
+<script>
+
+    const div = document.createElement("div");
+
+    console.log(div);
+    /*
+    <div></div>
+    */
+
+
+
+    // Adding properties in div element
+
+    div.className = "main";
+    // div.id = "myId";
+
+    div.id = Math.round(Math.random() * 10 + 1); // it change the id of the id attribute when the page loads
+
+    // to set custom attributes
+    div.setAttribute("title", "generated title"); 
+
+    /*
+    setAttribute():
+    - key-value pairs are given as an argument 
+    */
+
+    // adding styles
+    div.style.backgroundColor = "green";
+    div.style.padding = "12px";
+
+    // optimization
+    // div.innerText = "Chai aur Code";
+    /*
+    div.innerText = "Chai aur Code";
+    - This is not recommended by developers
+    - innerText first fetches the reference of the element
+    - Then, overites it
+
+    Always prefer to use this:
+
+    const addText = document.createTextNode("Chai aur code"); // It creates a Text Node
+
+    div.appendChild(addText); // it add the text in the element as a child
+    */
+
+    const addText = document.createTextNode("Chai aur code"); // It creates a Text Node
+
+    div.appendChild(addText); // it add the text in the element as a child
+
+
+
+    // attaching the div onto the screen
+
+    document.body.appendChild(div);
+    /*
+    A new element can be seen on the screen
+    */
+
+
+    /*
+    These entire lines of code can be put into the function.
+    
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 </html>
