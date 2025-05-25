@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // Three approaches of using events
+
+    /*
+    - In Javascript, all the events are run seqientially. JS is seqientially run language.
+    - Avoid injecting js code for events in the html because it is not scalable.
+    onclick="alert("owl")"
+    */
+
+    // use this instead
+    // but it gives limited features
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+
+    /*
+    - Always use eventListeners because it gives the  ability of propagation.
+    - Event listener can listen alot of events.
+    - Interview Question:
+    Q: What is the third parameter of eventListener() function? What is its use? What if that parameter is true?
+    */
+
+    // document.getElementById("owl").addEventListener("click", function (e) {
+    //     alert("Owl clicked again")
+    // });
+
+
+    // Few more approaches
+
+    // attachEvent() - used in earlier times when it was very difficult to run our application on Internet Explorer 
+
+    // in jQuery - .on
+
+
+    //  Event Object
+
+    document.getElementById("owl").addEventListener("click", function (e) {
+        console.log(e);
+    }, false);
+
+    /*
+    - We get PointerEvent{} object.
+    - We get browser events and environments events
+    - in interviews, we get alot of questions about this.
+    - Q: Create an app which shows the time when the user clicks anywhere?
+    - Create an app which has a div, when the user clicks on the div, a circle is created?
+    */
+
+    /*
+    What to study:(interviews)
+
+    - type, timestamp, defaultPrevented
+    - target, toElement, srcElement, currentTarget,
+    - clientX, clientY, screenX, screenY
+    - altkey, ctrlkey, shiftkey, keyCode
+    */
+
+
+    /*
+    - Event Propagation has two context
+        1. Event Bubbling
+        2. Event Capturing
+
+    - Most products use default valie i.e. false i.e.  event bubbling
+
+    - Event capturing can also be used
+
+    -  Two example on how event propagation works  and how to prevent event propagation
+    */
+
+    // event bubbling: Explain the code snippet below how it works
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation() // used to stop bubbling
+    // }, false)
+
+    // event capturing: Explain the code snippet below how it works
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, true)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     // e.stopPropagation()
+    // }, true)
+    
+
+    // preventing default behaviour
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault(); // now, it does not go to google webpage
+    //     // e.stopPropagation(); // stop propagation, bubbling stopped
+    //     console.log("google clicked");
+    // }, false)
+   
+
+
+    // Start learning from here
+
+    
+    // the images should gets hidden on clicking any image
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+    
+    //removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
